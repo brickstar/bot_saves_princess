@@ -18,18 +18,12 @@ class Navigator
   end
 
   def column_direction
-    if column_distance < 0
-      "RIGHT\n"
-    else
-      "LEFT\n"
-    end
+    return "RIGHT\n" if column_distance < 0
+    return "LEFT\n"
   end
 
   def row_direction
-    if row_distance < 0
-      "DOWN\n"
-    else
-      "UP\n"
-    end
+    return "DOWN\n" if row_distance < 0
+    return "UP\n"
   end
 end
