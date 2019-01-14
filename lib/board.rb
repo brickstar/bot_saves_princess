@@ -7,6 +7,14 @@ class Board
     place_piece('p')
   end
 
+  def bot
+    @pieces.find { |piece| piece.name == "m"}
+  end
+
+  def princess
+    @pieces.find { |piece| piece.name == "p"}
+  end
+    
   private
   def place_piece(letter)
     coordinates = determine_coordinates(letter, grid)
