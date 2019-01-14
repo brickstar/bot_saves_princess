@@ -40,6 +40,6 @@ describe 'board' do
 
       expect(princess).to be_a(GamePiece)
       expect(princess.name).to eq("p")
-     end
+    end
   end
 end
