@@ -19,4 +19,25 @@ describe 'board' do
     expect(@board.pieces.all? { |piece| piece.is_a? GamePiece }).to eq(true)
   end
 
+  it 'should place the pieces' do
+    expect(@board.bot.row_position).to eq(1)
+    expect(@board.bot.column_position).to eq(1)
+    expect(@board.princess.row_position).to eq(2)
+    expect(@board.princess.column_position).to eq(0)
+  end
+
+  context "#instance methods" do
+    it "#bot" do
+      bot = @board.bot
+
+      expect(bot).to be_a(GamePiece)
+      expect(bot.name).to eq("m")
+     end
+    it "#princess" do
+      princess = @board.princess
+
+      expect(princess).to be_a(GamePiece)
+      expect(princess.name).to eq("p")
+     end
+  end
 end
