@@ -29,17 +29,22 @@ describe 'Board' do
   end
 
   context "#instance methods" do
-    it "#bot" do
-      bot = @board.bot
+    context "#bot" do
+      it 'should return bot object' do
+        bot = @board.bot
 
-      expect(bot).to be_a(GamePiece)
-      expect(bot.name).to eq("m")
-     end
-    it "#princess" do
-      princess = @board.princess
+        expect(bot).to be_a(GamePiece)
+        expect(bot.name).to eq("m")
+      end
+    end
 
-      expect(princess).to be_a(GamePiece)
-      expect(princess.name).to eq("p")
+    context "#princess" do
+      it 'should return princess object' do
+        princess = @board.princess
+
+        expect(princess).to be_a(GamePiece)
+        expect(princess.name).to eq("p")
+      end
     end
   end
 end
