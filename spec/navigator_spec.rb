@@ -1,4 +1,5 @@
 require 'spec_helper'
+require './lib/navigator'
 
 describe 'navigator' do
   before(:each) do
