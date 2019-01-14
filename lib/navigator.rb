@@ -8,6 +8,10 @@ class Navigator
     column_direction * column_distance.abs + row_direction * row_distance.abs
   end
 
+  def next_move
+    path_to_princess.split[0]
+  end
+
   private
   def column_distance
     board.bot.column_position - board.princess.column_position

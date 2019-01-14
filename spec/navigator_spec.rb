@@ -20,6 +20,36 @@ describe 'navigator' do
   end
 
   context '#instance methods' do
+    context '#next_move' do
+      it 'returns next move left' do
+        board = Board.new(["---", "-m-", "p--"])
+        navigator = Navigator.new(board)
+
+        expect(navigator.next_move).to eq("LEFT")
+      end
+
+      it 'returns next move right' do
+        board = Board.new(["---", "m--", "-p-"])
+        navigator = Navigator.new(board)
+
+        expect(navigator.next_move).to eq("RIGHT")
+      end
+
+      it 'returns next move up' do
+        board = Board.new(["---", "--p", "--m"])
+        navigator = Navigator.new(board)
+
+        expect(navigator.next_move).to eq("UP")
+      end
+
+      it 'returns next move down' do
+        board = Board.new(["---", "--m", "--p"])
+        navigator = Navigator.new(board)
+
+        expect(navigator.next_move).to eq("DOWN")
+      end
+    end
+
     context '#path_to_princess' do
       it '3 x 3 board' do
         expect(@navigator_1.path_to_princess).to eq("LEFT\nDOWN\n")
