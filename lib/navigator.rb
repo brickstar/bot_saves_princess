@@ -1,4 +1,6 @@
 class Navigator
-  def initialize
+  attr_reader :board
+  def initialize(board)
+    @board = board
   end
 end
