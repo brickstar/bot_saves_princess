@@ -14,20 +14,28 @@ class Board
   def princess
     @pieces.find { |piece| piece.name == "p"}
   end
-    
+
   private
   def place_piece(letter)
     coordinates = determine_coordinates(letter, grid)
-    @pieces << GamePiece.new(letter, coordinates[0], coordinates[1])
+    @pieces << GamePiece.new(letter, coordinates[:row], coordinates[:column])
   end
 
   def determine_coordinates(letter, grid)
-    coords = []
-    grid.each do |str|
-      next if !str.include?(letter)
-      coords.push(str.index(letter))
-      coords.unshift(grid.index(str))
+    grid.inject({}) do |acc, str|
+      if str.include?(letter)
+        acc[:row] = find_row_position(grid, str)
+        acc[:column] = find_column_position(letter, str)
+      end
+      acc
     end
-    coords
+  end
+
+  def find_column_position(letter, str)
+    str.index(letter)
+  end
+
+  def find_row_position(grid, str)
+    grid.index(str)
   end
 end
