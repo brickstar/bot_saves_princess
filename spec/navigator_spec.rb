@@ -1,7 +1,7 @@
 require 'spec_helper'
 require './lib/navigator'
 
-describe 'navigator' do
+describe 'Navigator' do
   before(:each) do
     @board_1 = Board.new(["---", "-m-", "p--"])
     @board_2 = Board.new(["--p", "-m-", "---"])

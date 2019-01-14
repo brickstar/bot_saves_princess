@@ -1,7 +1,7 @@
 require 'spec_helper'
 require './lib/board'
 
-describe 'board' do
+describe 'Board' do
   before(:each) do
     @board = Board.new(["---", "-m-", "p--"])
   end
