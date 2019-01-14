@@ -33,12 +33,11 @@ class Board
   end
 
   def determine_coordinates(letter, grid)
-    grid.inject({}) do |acc, str|
+    grid.each_with_object({}) do |str, obj|
       if str.include?(letter)
-        acc[:row] = find_row_position(grid, str)
-        acc[:column] = find_column_position(letter, str)
+        obj[:row] = find_row_position(grid, str)
+        obj[:column] = find_column_position(letter, str)
       end
-      acc
     end
   end
 
