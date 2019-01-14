@@ -1,7 +1,7 @@
 require 'spec_helper'
 require './lib/game_piece'
 
-describe 'game_piece' do
+describe 'GamePiece' do
   before(:each) do
     @bot = GamePiece.new("m", 1, 1)
   end
