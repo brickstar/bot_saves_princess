@@ -16,4 +16,10 @@ describe 'navigator' do
       expect(@navigator.board).to be_a(Board)
     end
   end
+
+  context '#instance methods' do
+    it '#path_to_princess' do
+      expect(@navigator.path_to_princess).to eq("LEFT\nDOWN\n")
+    end
+  end
 end
